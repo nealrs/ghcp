@@ -1,0 +1,25 @@
+{
+  "name": "CP GitHub Ext",
+  "short_name": "ChallengePost",
+  "description": "ChallengePost",
+  "version": "0.0.1",
+  "permissions": ["tabs"],
+  "icons" : {
+    "16" : "icons/icon16.png",
+    "19" : "icons/icon19.png",
+    "48" : "icons/icon48.png",
+    "128" : "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.github.com/*", "https://www.github.com/*","http://github.com/*", "https://github.com/*"],
+      "css": ["cp.css"],
+      "js": ["cp.js"]
+    }
+  ],
+  "content_security_policy": "default-src 'self'; font-src 'self'; connect-src 'self' 'unsafe-inline' 'https://challengepost.com/*' 'http://challengepost.com/*';",
+  "web_accessible_resources": [
+    "css/*", "cpfont-webfont.eot", "cpfont-webfont.svg", "cpfont-webfont.ttf", "cpfont-webfont.woff"
+],
+  "manifest_version": 2
+}
